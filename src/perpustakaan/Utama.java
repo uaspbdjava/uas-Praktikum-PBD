@@ -73,6 +73,7 @@ new Timer(1000, taskPerformer).start();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btn_pin = new javax.swing.JButton();
+        btn_pin1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         Label1 = new javax.swing.JLabel();
         Label2 = new javax.swing.JLabel();
@@ -106,27 +107,40 @@ new Timer(1000, taskPerformer).start();
             }
         });
 
+        btn_pin1.setBackground(new java.awt.Color(255, 0, 51));
+        btn_pin1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        btn_pin1.setText("KOLEKSI");
+        btn_pin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pin1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addComponent(btn_pin, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(135, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(133, 133, 133))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_pin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_pin1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jLabel2)
-                .addGap(33, 33, 33)
-                .addComponent(btn_pin, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_pin, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_pin1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(204, 0, 204));
@@ -186,9 +200,16 @@ new Timer(1000, taskPerformer).start();
 
     private void btn_pinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pinActionPerformed
         // TODO add your handling code here:
-        new Pinjam().setVisible(true);
+        new PinjamU().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_pinActionPerformed
+
+    private void btn_pin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pin1ActionPerformed
+        // TODO add your handling code here:
+        
+        new KoleksiU().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_pin1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +253,7 @@ new Timer(1000, taskPerformer).start();
     private javax.swing.JLabel Label1;
     private javax.swing.JLabel Label2;
     private javax.swing.JButton btn_pin;
+    private javax.swing.JButton btn_pin1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

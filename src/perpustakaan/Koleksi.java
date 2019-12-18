@@ -46,7 +46,7 @@ public void tampilkandata() {
         initComponents();
          this.setLocationRelativeTo(this);
     }
-        private static Connection buka_koneksi() {
+        public static Connection buka_koneksi() {
         if (koneksi==null) {
             try {
                 String driver = "com.mysql.jdbc.Driver";
@@ -180,6 +180,11 @@ public void tampilkandata() {
                 "Kode Buku", "Judul Buku", "Pengarang", "Penerbit", "Stok"
             }
         ));
+        table2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(table2);
 
         btn_lihat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/perpustakaan/tm.jpg"))); // NOI18N
@@ -539,6 +544,14 @@ public void tampilkandata() {
     private void txt_kodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_kodeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_kodeActionPerformed
+
+    private void table2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table2MouseClicked
+     txt_kode.setText(table2.getValueAt(table2.getSelectedRow(), 0).toString());
+     txt_judul.setText(table2.getValueAt(table2.getSelectedRow(), 1).toString());
+     txt_peng.setText(table2.getValueAt(table2.getSelectedRow(), 2).toString());
+     txt_penerbit.setText(table2.getValueAt(table2.getSelectedRow(), 3).toString());
+     txt_stok.setText(table2.getValueAt(table2.getSelectedRow(), 4).toString());
+    }//GEN-LAST:event_table2MouseClicked
 
     /**
      * @param args the command line arguments

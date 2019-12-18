@@ -217,6 +217,11 @@ private static Connection koneksi; //Koneksi
                 "ID", "Kode", "Tgl_Pinjam", "Tgl_Kembali", "Denda"
             }
         ));
+        table3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table3MouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(table3);
 
         txt_id.addActionListener(new java.awt.event.ActionListener() {
@@ -380,7 +385,7 @@ private static Connection koneksi; //Koneksi
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btn_hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 99, Short.MAX_VALUE)
+                                    .addComponent(btn_hapus, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
                                     .addComponent(btn_cari, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -714,6 +719,14 @@ new Anggota().setVisible(true);
     private void txt_judulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_judulActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_judulActionPerformed
+
+    private void table3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table3MouseClicked
+     txt_id.setText(table3.getValueAt(table3.getSelectedRow(), 0).toString());
+     txt_kode.setText(table3.getValueAt(table3.getSelectedRow(), 1).toString());
+     txt_pinjam.setText(table3.getValueAt(table3.getSelectedRow(), 2).toString());
+     txt_kmbli.setText(table3.getValueAt(table3.getSelectedRow(), 3).toString());
+     txt_denda.setText(table3.getValueAt(table3.getSelectedRow(), 4).toString());
+    }//GEN-LAST:event_table3MouseClicked
 
     /**
      * @param args the command line arguments

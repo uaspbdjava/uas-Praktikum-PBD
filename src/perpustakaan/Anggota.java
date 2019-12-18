@@ -780,6 +780,11 @@ private static Connection buka_koneksi() {
                 "Id", "Nama", "Alamat", "TTL", "JKL", "Pekerjaan"
             }
         ));
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(table);
 
         btn_lihat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/perpustakaan/tm.jpg"))); // NOI18N
@@ -1138,6 +1143,16 @@ private static Connection buka_koneksi() {
     private void txt_ttlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ttlActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_ttlActionPerformed
+
+    private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+        txt_id.setText(table.getValueAt(table.getSelectedRow(), 0).toString());
+        txt_nama.setText(table.getValueAt(table.getSelectedRow(), 1).toString());
+        txt_alamt.setText(table.getValueAt(table.getSelectedRow(), 2).toString());
+        txt_ttl.setText(table.getValueAt(table.getSelectedRow(), 3).toString());
+        cmb_jenis.setSelectedItem(table.getValueAt(table.getSelectedRow(), 4).toString());
+        txt_pekerjaan.setText(table.getValueAt(table.getSelectedRow(), 5).toString());
+
+    }//GEN-LAST:event_tableMouseClicked
 
     /**
      * @param args the command line arguments
